@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', e => {
     const app = firebase.app()
+    console.log(app)
     const db = firebase.firestore()
     const myPost = db.collection('posts').doc('firstpost')
     myPost.onSnapshot(doc => {
@@ -7,7 +8,6 @@ document.addEventListener('DOMContentLoaded', e => {
         document.querySelector('#title').innerHTML = data.title
     })
 })
-
 function updatePost(e) {
     const db = firebase.firestore()
     const myPost = db.collection('posts').doc('firstpost')
